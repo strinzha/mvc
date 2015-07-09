@@ -7,6 +7,8 @@ function Controller (options) {
 	that.render = options.render;
 	that.clickHandlers = options.clickHandlers;
 	
+	document.getElementById(that.elementId).innerHTML = that.render();
+
 	that.isChanged = function() {
 		that.model.takeExam();
 		var interval = setInterval(function(){
@@ -16,11 +18,7 @@ function Controller (options) {
 			}							
 		}, 100);
 
-	};
-
-	(function(){		
-		document.getElementById(that.elementId).innerHTML = that.render();		
-	})();
+	};	
 	
 	for (var properties in that.clickHandlers) {
 		var el = document.querySelector(properties);
