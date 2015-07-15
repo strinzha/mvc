@@ -24,5 +24,3 @@ var StudentController = new Controller({
         this.model.takeExam();
     }
 });
-
-StudentController.isChanged();
